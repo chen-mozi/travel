@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon"
              v-for="item of page"
@@ -12,6 +12,7 @@
          <p class="icon-desc">{{item.desc}}</p>
         </div>
       </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
 </template>
@@ -21,6 +22,10 @@ export default{
   name: 'HomeIcons',
   data () {
     return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true
+      },
       iconList: [{
         id: '0001',
         imgUrl: './static/img/iconImg01.png',
@@ -83,21 +88,24 @@ export default{
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
   @import '~styles/mixins.styl'
-    .icons >>>.swiper-container
-      height: 0
-      padding-bottom: 50%
+  .icons >>>.swiper-container
+    height: 0
+    padding-bottom: 50%
+  .icons
+    margin-top: 0.2rem
     .icon
       position: relative
       float: left
       width: 25%
       height:0
-      padding-bottom: 25%
+      padding-bottom: 22%
+      touch-action:none
       .icon-img
         position: absolute
         left:0
         right: 0
         top:0
-        bottom: 0.44rem
+        bottom: 0.3rem
         box-sizing:border-box
         padding: 0.1rem
         .icon-img-components
