@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="icons.length">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon"
              v-for="item of page"
@@ -20,59 +20,22 @@
 <script>
 export default{
   name: 'HomeIcons',
+  props: {
+    icons: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
-        loop: true
-      },
-      iconList: [{
-        id: '0001',
-        imgUrl: './static/img/iconImg01.png',
-        desc: '景点门票'
-      }, {
-        id: '0002',
-        imgUrl: './static/img/iconImg02.png',
-        desc: '惠州必游'
-      }, {
-        id: '0003',
-        imgUrl: './static/img/iconImg03.png',
-        desc: '惠州国庆'
-      }, {
-        id: '0004',
-        imgUrl: './static/img/iconImg04.png',
-        desc: '海滨海岛'
-      }, {
-        id: '0005',
-        imgUrl: './static/img/iconImg05.png',
-        desc: '广州融创'
-      }, {
-        id: '0006',
-        imgUrl: './static/img/iconImg06.png',
-        desc: '地派温泉'
-      }, {
-        id: '0007',
-        imgUrl: './static/img/iconImg07.png',
-        desc: '漂流'
-      }, {
-        id: '0008',
-        imgUrl: './static/img/iconImg08.png',
-        desc: '海洋馆'
-      }, {
-        id: '0009',
-        imgUrl: './static/img/iconImg09.png',
-        desc: '水上玩乐'
-      }, {
-        id: '0010',
-        imgUrl: './static/img/iconImg10.png',
-        desc: '玩转长隆'
-      }]
+        loop: true,
+        autoplay: false
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.icons.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
@@ -99,7 +62,6 @@ export default{
       width: 25%
       height:0
       padding-bottom: 22%
-      touch-action:none
       .icon-img
         position: absolute
         left:0

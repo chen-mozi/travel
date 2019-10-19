@@ -8,8 +8,8 @@
       <a class="hot-title-more"  href="#">全部榜单&nbsp;></a>
     </div>
     <div class="hot-item">
-      <ul >
-        <li class="hot-item-li" v-for="item of recommendList" :key="item.id">
+      <ul>
+        <li class="hot-item-li" v-for="item of hot" :key="item.id" >
           <img class="hot-item-img-top" :src="item.imgTop">
           <img class="hot-item-img" :src='item.imgUrl' />
           <div class="hot-item-info">
@@ -28,33 +28,8 @@
 <script>
 export default {
   name: 'HomeHotRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgTop: './static/img/recommenTop01.png',
-        imgUrl: './static/img/recommen01.jpg',
-        title: '南昆山温泉大观园',
-        price: '￥105'
-      }, {
-        id: '0002',
-        imgTop: './static/img/recommenTop02.png',
-        imgUrl: './static/img/recommen02.jpg',
-        title: '罗浮山那里花开主题公园',
-        price: '￥45'
-      }, {
-        id: '0003',
-        imgTop: './static/img/recommenTop03.png',
-        imgUrl: './static/img/recommen03.jpg',
-        title: '南昆山云顶温泉',
-        price: '￥91'
-      }, {
-        id: '0004',
-        imgUrl: './static/img/recommen04.jpg',
-        title: '欧美城文化小镇',
-        price: '￥15'
-      }]
-    }
+  props: {
+    hot: Array
   }
 }
 </script>

@@ -4,7 +4,7 @@
       <img class="recommend-icon"  src="../../../../static/img/love.png">
       <span>猜你喜欢</span>
     </div>
-    <ul class="like-list" v-for="item of LoveList" :key="item.id">
+    <ul class="like-list" v-for="item of love" :key="item.id">
        <li class="list-item">
          <div class="list-box">
            <div class="item-img-wrapper">
@@ -42,37 +42,8 @@
 <script>
 export default {
   name: 'HomeLoveList',
-  data () {
-    return {
-      LoveList: [{
-        id: '001',
-        topTitle: '明日可订',
-        imgTop: './static/img/loveIcons.png',
-        imgUrl: './static/img/loveList01.jpg',
-        title: '地派温泉',
-        price: '188',
-        comment: '524',
-        addres: '龙门县'
-      }, {
-        id: '002',
-        topTitle: '随买随用',
-        imgTop: './static/img/loveIcons.png',
-        imgUrl: './static/img/loveList02.jpg',
-        title: '南昆山云顶温泉',
-        comment: '2940',
-        price: '91',
-        addres: '龙门县'
-      }, {
-        id: '003',
-        topTitle: '明日可订',
-        imgTop: './static/img/loveIcons2.png',
-        imgUrl: './static/img/loveList03.jpg',
-        title: '三角洲岛',
-        comment: '1479',
-        price: '118',
-        addres: '惠东县'
-      }]
-    }
+  props: {
+    love: Array
   }
 }
 </script>
