@@ -25,7 +25,7 @@ export default {
     .header-icon
       position: absolute
       top :0
-      left :0.3rem
+      left :0
       font-size: 0.4rem
       color: #FFFFFF
 
