@@ -33,7 +33,8 @@ export default {
   data () {
     return {
       cities: {},
-      hotCities: []
+      hotCities: [],
+      letter: ''
     }
   },
   methods: {
@@ -48,6 +49,9 @@ export default {
         this.cities = data.cities
         this.hotCities = data.hotCities
       }
+    },
+    handLetterChange (letter) {
+      this.letter = letter
     }
   },
   mounted () {
