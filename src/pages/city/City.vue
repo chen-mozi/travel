@@ -1,15 +1,16 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search></city-search>
+    <city-search :cities="cities"></city-search>
     <city-list
-      :cities="cities"
-      :hot="hotCities"
-      :letter="letter"
-    ></city-list>
+       :cities="cities"
+       :hot="hotCities"
+       :letter="letter"
+    >
+    </city-list>
     <city-aphabet
-    :cities="cities"
-    @change="handLetterChange"
+       :cities="cities"
+       @change="handLetterChange"
     >
     </city-aphabet>
   </div>
