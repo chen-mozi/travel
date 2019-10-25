@@ -2,8 +2,17 @@
   <div>
     <city-header></city-header>
     <city-search :cities="cities"></city-search>
-    <city-list :cities="cities" :hot="hotCities"></city-list>
-    <city-aphabet :cities="cities"></city-aphabet>
+    <city-list
+       :cities="cities"
+       :hot="hotCities"
+       :letter="letter"
+    >
+    </city-list>
+    <city-aphabet
+       :cities="cities"
+       @change="handLetterChange"
+    >
+    </city-aphabet>
   </div>
 </template>
 
