@@ -15,8 +15,11 @@
           <div class="hot-item-info">
             <p class="hot-item-title">{{item.title}}</p>
             <p class="hot-item-price">
-              <span  class="hot-item-price-one">{{item.price}}</span>
-              <span >起</span>
+              <span style="color: #ff8300">￥</span>
+              <span>
+                <span class="hot-item-price-one">{{item.price}}</span>
+                起
+              </span>
             </p>
           </div>
         </li>
@@ -87,9 +90,12 @@ export default {
           ellipsis()
           // float: left
         .hot-item-price
-         // float:left
+         min-width: 0.5rem
+         padding:0 .1rem
          margin-top:0.1rem
          .hot-item-price-one
-          color: #ff8e17
+          font-size: 0.2rem
+          color: #ff8300
+          margin:0 -0.06rem
           font-weight: 700
 </style>

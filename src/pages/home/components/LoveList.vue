@@ -4,8 +4,16 @@
       <img class="recommend-icon"  src="../../../../static/img/love.png">
       <span>猜你喜欢</span>
     </div>
-    <ul class="like-list" v-for="item of love" :key="item.id">
-       <li class="list-item">
+    <ul
+      class="like-list"
+      v-for="item of love"
+      :key="item.id"
+    >
+        <router-link
+            class="list-item"
+
+            :to="'/detail/' + item.id"
+        >
          <div class="list-box">
            <div class="item-img-wrapper">
              <div class="item-img-info">
@@ -27,15 +35,19 @@
              </div>
              <div class="item-like">
                <span style="color: #ff8300">￥</span>
-               <span class="item-price">{{item.price}}</span>
-               <span class="item-up">起</span>
+               <span class="item-price">
+                  <span class="item-price-number">
+                  {{item.price}}
+                  </span>
+                  起
+               </span>
                <span class="item-addres">{{item.addres}}</span>
              </div>
            </div>
-         </div>
-       </li>
+          </div>
+        </router-link>
     </ul>
-    <a class="love-list-more" href="#">查看详情</a>
+    <a class="love-list-more" href="#">查看所有产品</a>
   </div>
 </template>
 
@@ -111,21 +123,25 @@ export default {
            .item-like
               margin-top: 0.9rem
               font-size: .24rem
+              color: #616161
               .item-price
+                min-width: 0.5rem
+                padding:0 .2rem
                 position: absolute
                 top: 1.23rem
-                right: 6.45rem
-                font-size: 0.4rem
-                color: #ff8300
-              .item-up
-                position: absolute
-                top: 1.33rem
-                right: 6.2rem
+                left: 0
+                // font-size: 0.4rem
+                // color: #ff8300
+                .item-price-number
+                  font-size: 0.4rem
+                  color: #ff8300
+                  margin-right: -0.1rem
               .item-addres
-                color: #616161
+                min-width: 1rem
+                margin-right: 0.2rem
                 position: absolute
                 top: 1.33rem
-                left: 3.7rem
+                right: 2.5rem
     .love-list-more
       display: block
       font-size: .28rem
