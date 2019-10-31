@@ -11,7 +11,6 @@
     >
         <router-link
             class="list-item"
-
             :to="'/detail/' + item.id"
         >
          <div class="list-box">
