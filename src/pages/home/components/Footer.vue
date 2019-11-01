@@ -87,9 +87,12 @@ export default {
       display: flex
       margin: 0.1rem 1rem
       position: relative
+      min-width: 1rem
+      text-align:center
       .icons
+        overflow: hidden
         float: left
-        padding: 0.1rem 0.2rem
+        padding: 0.1rem 0.15rem
         .iconfont
           font-size: 0.43rem
           color: #acacac
@@ -105,12 +108,15 @@ export default {
           font-size: 0.3rem
           border: none
     .user
-      position: relative
       display: flex
+      margin: -0.1rem 1rem
+      position: relative
+      min-width: 1rem
+      text-align:center
       .user-info
         float: left
         line-height: 0.8rem
-        padding-left: 0.5rem
+        padding-left: 0.3rem
         font-size: 0.28rem
         // border-bottom: 0.03rem solid #cacaca
         a
@@ -130,8 +136,10 @@ export default {
         padding-left: 0.5rem
     .copyright
       color: #9e9e9e
-      padding: 0 1.5rem
+      // padding: 0 1.5rem
       margin-bottom: 0.2rem
+      min-width: 5rem
+      text-align: center
       a
         display: inline-block
         color: #9e9e9e
